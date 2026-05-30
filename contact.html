@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Ikon.dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="js/global.js" defer></script>
+  <script src="js/contact.js" defer></script>
+</head>
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">ikon.dev</a>
+    <div class="nav-links">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- header -->
+  <section class="contact-hero">
+    <div class="contact-hero-inner">
+      <span class="section-label">Contact</span>
+      <h1 class="page-title">Let's talk.</h1>
+      <p class="contact-lead">
+        Got a project, a problem, or just want to connect —
+        reach out and I'll get back to you.
+      </p>
+    </div>
+  </section>
+
+  <!-- contact body -->
+  <section class="contact-body">
+    <div class="contact-grid">
+
+      <!-- form -->
+      <div class="contact-form-wrap">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" rows="6" placeholder="What's on your mind?"></textarea>
+        </div>
+        <button class="btn btn-primary" id="send-btn">Send message</button>
+        <p class="form-note" id="form-note"></p>
+      </div>
+
+      <!-- links -->
+      <div class="contact-links">
+        <div class="contact-link-item">
+          <span class="link-label">X (Twitter)</span>
+          <a href="https://x.com/Ikon_dev" target="_blank" class="link-value">@Ikon_dev</a>
+        </div>
+        <div class="contact-link-item">
+          <span class="link-label">Email</span>
+          <a href="mailto:ikongiddy411@gmail.com" class="link-value">ikongiddy411@gmail.com</a>
+        </div>
+        <div class="contact-link-item">
+          <span class="link-label">WhatsApp</span>
+          <a href="https://wa.me/2348163681357" target="_blank" class="link-value">Message me</a>
+        </div>
+        <div class="contact-link-item">
+          <span class="link-label">Based in</span>
+          <span class="link-value plain">Abia State, Nigeria</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    <span class="footer-copy">ikon.dev · 2025</span>
+    <div class="footer-links">
+      <a href="https://x.com/Ikon_dev" target="_blank">X</a>
+      <a href="#" target="_blank">GitHub</a>
+      <a href="#" target="_blank">WhatsApp</a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ikon.dev — Gideon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="data/projects.js" defer></script>
+  <script src="js/global.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">ikon.dev</a>
+    <div class="nav-links">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">
+        <span class="tag-text">Automation</span>
+      </div>
+      <h1 class="hero-name">
+        I'm Gideon.<br />
+        <span class="hero-headline">I build things that work.</span>
+      </h1>
+      <p class="hero-sub">
+        Automations, interfaces, and systems for small businesses —
+        clean, fast, documented.
+      </p>
+      <div class="hero-btns">
+        <a href="work.html" class="btn btn-primary">See my work</a>
+        <a href="contact.html" class="btn btn-secondary">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- what I do -->
+  <section class="areas" id="areas">
+    <div class="section-header">
+      <span class="section-label">What I do</span>
+      <h2 class="section-title">Five areas, one system.</h2>
+    </div>
+    <div class="areas-grid">
+      <a href="work.html?area=automation" class="area-tile">
+        <span class="area-id">01</span>
+        <span class="area-name">Automation</span>
+      </a>
+      <a href="work.html?area=dev" class="area-tile">
+        <span class="area-id">02</span>
+        <span class="area-name">Dev</span>
+      </a>
+      <a href="work.html?area=design" class="area-tile">
+        <span class="area-id">03</span>
+        <span class="area-name">Design</span>
+      </a>
+      <a href="work.html?area=visuals" class="area-tile">
+        <span class="area-id">04</span>
+        <span class="area-name">Visuals</span>
+      </a>
+      <a href="work.html?area=prompt-engineering" class="area-tile">
+        <span class="area-id">05</span>
+        <span class="area-name">Prompt eng.</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- featured builds -->
+  <section class="featured" id="work">
+    <div class="section-header">
+      <span class="section-label">Featured builds</span>
+      <h2 class="section-title">Recent work.</h2>
+    </div>
+    <div class="projects-grid" id="featured-grid">
+      <!-- populated by main.js from projects.js -->
+    </div>
+    <a href="work.html" class="view-all">View all builds →</a>
+  </section>
+
+  <!-- about strip -->
+  <section class="about-strip">
+    <div class="about-inner">
+      <div class="about-avatar">GI</div>
+      <div class="about-text">
+        <p class="about-name">Gideon · ikon.dev</p>
+        <p class="about-bio">
+          CS student at Gregory University. Building automations and
+          interfaces for small businesses. Behind the work, not in
+          front of the camera.
+        </p>
+        <a href="about.html" class="about-link">More about me →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    <span class="footer-copy">ikon.dev · 2025</span>
+    <div class="footer-links">
+      <a href="https://x.com/Ikon_dev" target="_blank">X</a>
+      <a href="#" target="_blank">GitHub</a>
+      <a href="#" target="_blank">WhatsApp</a>
+    </div>
+  </footer>
+
+</body>
+</html>

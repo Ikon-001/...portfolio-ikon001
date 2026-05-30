@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Ikon.dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/work.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="data/projects.js" defer></script>
+  <script src="js/global.js" defer></script>
+  <script src="js/work.js" defer></script>
+</head>
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">ikon.dev</a>
+    <div class="nav-links">
+      <a href="work.html" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- page header -->
+  <section class="page-header">
+    <div class="page-header-inner">
+      <span class="section-label">All builds</span>
+      <h1 class="page-title">The work.</h1>
+      <p class="page-sub">
+        Every build, documented. Five areas, one numbered system.
+      </p>
+    </div>
+  </section>
+
+  <!-- filters -->
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="automation">Automation</button>
+    <button class="filter-btn" data-filter="dev">Dev</button>
+    <button class="filter-btn" data-filter="design">Design</button>
+    <button class="filter-btn" data-filter="visuals">Visuals</button>
+    <button class="filter-btn" data-filter="prompt-engineering">Prompt eng.</button>
+  </div>
+
+  <!-- projects grid -->
+  <section class="work-grid-section">
+    <div class="projects-grid wide" id="work-grid">
+      <!-- populated by work.js -->
+    </div>
+    <p class="empty-state" id="empty-state" style="display:none;">
+      No builds in this area yet — check back soon.
+    </p>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    <span class="footer-copy">ikon.dev · 2025</span>
+    <div class="footer-links">
+      <a href="https://x.com/Ikon_dev" target="_blank">X</a>
+      <a href="#" target="_blank">GitHub</a>
+      <a href="#" target="_blank">WhatsApp</a>
+    </div>
+  </footer>
+
+</body>
+</html>

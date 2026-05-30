@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project — Ikon.dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/project.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="data/projects.js" defer></script>
+  <script src="js/global.js" defer></script>
+  <script src="js/project.js" defer></script>
+</head>
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">ikon.dev</a>
+    <div class="nav-links">
+      <a href="work.html" class="active">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- project hero -->
+  <section class="project-hero">
+    <div class="project-hero-inner">
+      <a href="work.html" class="back-link">← Back to work</a>
+      <div class="project-meta" id="project-meta">
+        <!-- populated by project.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- project body -->
+  <section class="project-body">
+    <div class="project-body-inner">
+
+      <div class="project-section" id="project-overview">
+        <span class="project-section-label">Overview</span>
+        <p class="project-section-text" id="overview-text"></p>
+      </div>
+
+      <div class="project-section" id="project-tools">
+        <span class="project-section-label">Tools used</span>
+        <div class="tools-grid" id="tools-grid"></div>
+      </div>
+
+      <div class="project-section" id="project-visuals">
+        <span class="project-section-label">Visuals</span>
+        <div class="visuals-placeholder" id="visuals-area">
+          <span>Screenshots and demo coming soon.</span>
+        </div>
+      </div>
+
+      <div class="project-section" id="project-learnings">
+        <span class="project-section-label">Learnings</span>
+        <p class="project-section-text" id="learnings-text"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- next project -->
+  <section class="next-project">
+    <div class="next-inner">
+      <span class="section-label">Next build</span>
+      <a href="#" class="next-link" id="next-link">— —</a>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    <span class="footer-copy">ikon.dev · 2025</span>
+    <div class="footer-links">
+      <a href="https://x.com/Ikon_dev" target="_blank">X</a>
+      <a href="#" target="_blank">GitHub</a>
+      <a href="#" target="_blank">WhatsApp</a>
+    </div>
+  </footer>
+
+</body>
+</html>

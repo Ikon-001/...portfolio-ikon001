@@ -1,0 +1,121 @@
+/* ── about hero ── */
+.about-hero {
+  padding: 160px 48px 80px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-lead {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 600px;
+  margin-top: 16px;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+/* ── about details ── */
+.about-details {
+  padding: 0 48px 80px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.about-block {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.block-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.block-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* ── stack ── */
+.about-stack {
+  background: var(--bg-secondary);
+  padding: 80px 48px;
+}
+
+.stack-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stack-inner .section-label {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.stack-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stack-item {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* ── cta ── */
+.about-cta {
+  padding: 100px 48px;
+  text-align: center;
+}
+
+.cta-inner {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.cta-sub {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+/* ── responsive ── */
+@media (max-width: 768px) {
+  .about-hero { padding: 120px 24px 60px; }
+  .about-details { padding: 0 24px 60px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-stack { padding: 60px 24px; }
+  .about-cta { padding: 72px 24px; }
+}

@@ -1,0 +1,90 @@
+/* ── active nav link ── */
+.nav-links a.active {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── page header ── */
+.page-header {
+  padding: 160px 48px 64px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin: 8px 0 16px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-sub {
+  font-size: 16px;
+  color: var(--text-secondary);
+  max-width: 400px;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+/* ── filters ── */
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0 48px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.filter-btn {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-mid);
+  color: var(--accent);
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* ── work grid ── */
+.work-grid-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px 100px;
+}
+
+.projects-grid.wide {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ── empty state ── */
+.empty-state {
+  font-size: 14px;
+  color: var(--text-muted);
+  padding: 48px 0;
+  text-align: center;
+}
+
+/* ── responsive ── */
+@media (max-width: 768px) {
+  .page-header { padding: 120px 24px 48px; }
+  .filters { padding: 0 24px 36px; }
+  .work-grid-section { padding: 0 24px 72px; }
+  .projects-grid.wide { grid-template-columns: 1fr; }
+}

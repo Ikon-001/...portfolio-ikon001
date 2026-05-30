@@ -1,0 +1,153 @@
+/* ── project hero ── */
+.project-hero {
+  padding: 140px 48px 64px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.project-meta {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.project-id {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.project-title {
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-light);
+  border-radius: 20px;
+  padding: 5px 14px;
+}
+
+/* ── project body ── */
+.project-body {
+  padding: 0 48px 100px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project-section {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.project-section-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.project-section-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  max-width: 600px;
+}
+
+/* ── tools grid ── */
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tool-item {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 16px;
+}
+
+/* ── visuals placeholder ── */
+.visuals-placeholder {
+  width: 100%;
+  min-height: 240px;
+  background: var(--bg-secondary);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ── next project ── */
+.next-project {
+  background: var(--bg-secondary);
+  padding: 80px 48px;
+}
+
+.next-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.next-inner .section-label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.next-link {
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  transition: color 0.2s;
+}
+
+.next-link:hover {
+  color: var(--accent);
+}
+
+/* ── responsive ── */
+@media (max-width: 768px) {
+  .project-hero { padding: 120px 24px 48px; }
+  .project-body { padding: 0 24px 72px; }
+  .next-project { padding: 60px 24px; }
+}
