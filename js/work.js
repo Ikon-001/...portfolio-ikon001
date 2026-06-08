@@ -39,7 +39,7 @@ function renderProjects(filter = 'all') {
       </div>
     `;
     card.addEventListener('click', () => {
-      window.location.href = `project.html?id=${p.id}`;
+      window.location.href = `./project.html?id=${p.id}`;
     });
     grid.appendChild(card);
 

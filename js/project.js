@@ -28,7 +28,21 @@ if (!project) {
   `;
 
   // ── overview ──
-  document.getElementById('overview-text').textContent = project.description;
+  document.getElementById('overview-text').textContent = project.overview || project.description;
+
+  // ── how it works ──
+  const howSection = document.getElementById('project-how');
+  if (project.how_it_works && project.how_it_works.length) {
+    const steps = project.how_it_works.map((step, i) => `
+      <div class="how-step">
+        <span class="step-number">0${i + 1}</span>
+        <p class="step-text">${step}</p>
+      </div>
+    `).join('');
+    document.getElementById('how-steps').innerHTML = steps;
+  } else {
+    howSection.style.display = 'none';
+  }
 
   // ── tools ──
   const toolsGrid = document.getElementById('tools-grid');
@@ -39,17 +53,16 @@ if (!project) {
     toolsGrid.appendChild(el);
   });
 
-  // ── learnings (placeholder until you add to projects.js) ──
-  const learnings = project.learnings ||
+  // ── learnings ──
+  document.getElementById('learnings-text').textContent = project.learnings ||
     'Learnings and process notes coming soon.';
-  document.getElementById('learnings-text').textContent = learnings;
 
   // ── next project ──
   const currentIndex = projects.findIndex(p => p.id === projectId);
   const next = projects[(currentIndex + 1) % projects.length];
   const nextLink = document.getElementById('next-link');
   nextLink.textContent = `${next.id} — ${next.title} →`;
-  nextLink.href = `project.html?id=${next.id}`;
+  nextLink.href = `./project.html?id=${next.id}`;
 
   // ── animations ──
   gsap.to('.project-meta', {
@@ -65,11 +78,3 @@ if (!project) {
     delay: 0.5
   });
 }
-
-// close nav when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('open');
-  });
-});

@@ -47,17 +47,19 @@ window.addEventListener('scroll', () => {
   overlay.classList.add('page-transition');
   document.body.appendChild(overlay);
 
-  // page enter — fade in
+  // page enter
+  // page enter — handles both normal load and back/forward
+window.addEventListener('pageshow', () => {
   gsap.fromTo(overlay,
     { scaleY: 1, transformOrigin: 'top' },
-    { scaleY: 0, duration: 0.6, ease: 'power2.inOut', delay: 0.1 }
+    { scaleY: 0, duration: 0.3, ease: 'power2.out', delay: 0.05 }
   );
+});
 
-  // page exit — on link click
+  // page exit
   document.querySelectorAll('a').forEach(link => {
     const href = link.getAttribute('href');
 
-    // only handle internal links
     if (!href || href.startsWith('http') || href.startsWith('mailto')
       || href.startsWith('#') || href.startsWith('tel')) return;
 
@@ -67,8 +69,8 @@ window.addEventListener('scroll', () => {
         { scaleY: 0, transformOrigin: 'bottom' },
         {
           scaleY: 1,
-          duration: 0.5,
-          ease: 'power2.inOut',
+          duration: 0.25,
+          ease: 'power2.in',
           onComplete: () => {
             window.location.href = href;
           }

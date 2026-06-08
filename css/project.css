@@ -151,3 +151,36 @@
   .project-body { padding: 0 24px 72px; }
   .next-project { padding: 60px 24px; }
 }
+
+/* ── how it works ── */
+.how-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.how-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-5);
+  padding: var(--sp-5);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.step-number {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--accent);
+  font-family: 'Cabinet Grotesk', sans-serif;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step-text {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
