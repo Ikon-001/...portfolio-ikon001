@@ -2,7 +2,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
 // ── hero tag cycling ──
-const areas = ['Automation', 'Dev', 'Design', 'Visuals', 'Prompt eng.'];
+const areas = ['Automation', 'Dev', 'Design', 'Visuals', 'AI Systems'];
 const tagText = document.querySelector('.tag-text');
 let current = 0;
 
@@ -95,12 +95,4 @@ gsap.to('.project-card', {
     trigger: '.projects-grid',
     start: 'top 80%',
   }
-});
-
-// close nav when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('open');
-  });
 });

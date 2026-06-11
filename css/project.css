@@ -184,3 +184,60 @@
   color: var(--text-secondary);
   line-height: 1.7;
 }
+
+/* ── phases ── */
+.phase-block {
+  margin-bottom: var(--sp-7);
+}
+
+.phase-block:last-child {
+  margin-bottom: 0;
+}
+
+.phase-label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Cabinet Grotesk', sans-serif;
+  margin-bottom: var(--sp-4);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── use cases ── */
+.usecases-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-4);
+}
+
+.usecase-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--sp-5);
+  transition: border-color 0.2s;
+}
+
+.usecase-card:hover {
+  border-color: var(--border-hover);
+}
+
+.usecase-title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--accent);
+  font-family: 'Cabinet Grotesk', sans-serif;
+  margin-bottom: var(--sp-2);
+}
+
+.usecase-desc {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ── responsive ── */
+@media (max-width: 768px) {
+  .usecases-grid { grid-template-columns: 1fr; }
+}

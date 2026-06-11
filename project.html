@@ -42,21 +42,37 @@
   <section class="project-body">
     <div class="project-body-inner">
 
+      <!-- overview -->
       <div class="project-section" id="project-overview">
         <span class="project-section-label">Overview</span>
         <p class="project-section-text" id="overview-text"></p>
       </div>
 
-      <div class="project-section" id="project-how">
+      <!-- phases (for multi-phase builds like A01) -->
+      <div class="project-section" id="project-phases" style="display:none;">
+        <span class="project-section-label">How it works</span>
+        <div id="phases-container"></div>
+      </div>
+
+      <!-- how it works (for single phase builds) -->
+      <div class="project-section" id="project-how" style="display:none;">
         <span class="project-section-label">How it works</span>
         <div class="how-steps" id="how-steps"></div>
       </div>
 
+      <!-- tools -->
       <div class="project-section" id="project-tools">
         <span class="project-section-label">Tools used</span>
         <div class="tools-grid" id="tools-grid"></div>
       </div>
 
+      <!-- use cases -->
+      <div class="project-section" id="project-usecases" style="display:none;">
+        <span class="project-section-label">Use cases</span>
+        <div class="usecases-grid" id="usecases-grid"></div>
+      </div>
+
+      <!-- visuals -->
       <div class="project-section" id="project-visuals">
         <span class="project-section-label">Visuals</span>
         <div class="visuals-placeholder" id="visuals-area">
@@ -64,6 +80,7 @@
         </div>
       </div>
 
+      <!-- learnings -->
       <div class="project-section" id="project-learnings">
         <span class="project-section-label">Learnings</span>
         <p class="project-section-text" id="learnings-text"></p>

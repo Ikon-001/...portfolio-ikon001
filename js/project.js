@@ -14,10 +14,10 @@ if (!project) {
   `;
 } else {
 
-  // ── set page title ──
+  // ── page title ──
   document.title = `${project.title} — Ikon.dev`;
 
-  // ── populate meta ──
+  // ── meta ──
   const meta = document.getElementById('project-meta');
   meta.innerHTML = `
     <div class="project-id">${project.id} · ${project.area}</div>
@@ -30,18 +30,34 @@ if (!project) {
   // ── overview ──
   document.getElementById('overview-text').textContent = project.overview || project.description;
 
-  // ── how it works ──
-  const howSection = document.getElementById('project-how');
-  if (project.how_it_works && project.how_it_works.length) {
-    const steps = project.how_it_works.map((step, i) => `
+  // ── phases (multi-phase builds) ──
+  if (project.phases && project.phases.length) {
+    const phasesSection = document.getElementById('project-phases');
+    phasesSection.style.display = 'block';
+    const container = document.getElementById('phases-container');
+    container.innerHTML = project.phases.map(phase => `
+      <div class="phase-block">
+        <div class="phase-label">${phase.label}</div>
+        <div class="how-steps">
+          ${phase.steps.map((step, i) => `
+            <div class="how-step">
+              <span class="step-number">0${i + 1}</span>
+              <p class="step-text">${step}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `).join('');
+  } else if (project.how_it_works && project.how_it_works.length) {
+    // ── single phase how it works ──
+    const howSection = document.getElementById('project-how');
+    howSection.style.display = 'block';
+    document.getElementById('how-steps').innerHTML = project.how_it_works.map((step, i) => `
       <div class="how-step">
         <span class="step-number">0${i + 1}</span>
         <p class="step-text">${step}</p>
       </div>
     `).join('');
-    document.getElementById('how-steps').innerHTML = steps;
-  } else {
-    howSection.style.display = 'none';
   }
 
   // ── tools ──
@@ -52,6 +68,19 @@ if (!project) {
     el.textContent = t;
     toolsGrid.appendChild(el);
   });
+
+  // ── use cases ──
+  if (project.use_cases && project.use_cases.length) {
+    const usecasesSection = document.getElementById('project-usecases');
+    usecasesSection.style.display = 'block';
+    const grid = document.getElementById('usecases-grid');
+    grid.innerHTML = project.use_cases.map(uc => `
+      <div class="usecase-card">
+        <div class="usecase-title">${uc.title}</div>
+        <div class="usecase-desc">${uc.desc}</div>
+      </div>
+    `).join('');
+  }
 
   // ── learnings ──
   document.getElementById('learnings-text').textContent = project.learnings ||
