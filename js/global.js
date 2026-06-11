@@ -1,4 +1,4 @@
-// ── navbar scroll ──
+// ── navbar scroll state ──
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
@@ -47,19 +47,15 @@ window.addEventListener('scroll', () => {
   overlay.classList.add('page-transition');
   document.body.appendChild(overlay);
 
-  // page enter
-  // page enter — handles both normal load and back/forward
-window.addEventListener('pageshow', () => {
-  gsap.fromTo(overlay,
-    { scaleY: 1, transformOrigin: 'top' },
-    { scaleY: 0, duration: 0.3, ease: 'power2.out', delay: 0.05 }
-  );
-});
+  window.addEventListener('pageshow', () => {
+    gsap.fromTo(overlay,
+      { scaleY: 1, transformOrigin: 'top' },
+      { scaleY: 0, duration: 0.3, ease: 'power2.out', delay: 0.05 }
+    );
+  });
 
-  // page exit
   document.querySelectorAll('a').forEach(link => {
     const href = link.getAttribute('href');
-
     if (!href || href.startsWith('http') || href.startsWith('mailto')
       || href.startsWith('#') || href.startsWith('tel')) return;
 

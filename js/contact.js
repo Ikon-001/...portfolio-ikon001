@@ -1,21 +1,27 @@
-// ── entrance animations ──
-gsap.to('.page-title', {
-  opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay: 0.2
-});
+gsap.registerPlugin(ScrollTrigger);
 
-gsap.to('.contact-lead', {
-  opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.4
-});
+// ── page entrance ──
+gsap.fromTo('.page-title',
+  { opacity: 0, y: 30 },
+  { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay: 0.2 }
+);
 
-gsap.to('.contact-form-wrap', {
-  opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.5
-});
+gsap.fromTo('.contact-lead',
+  { opacity: 0, y: 20 },
+  { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.4 }
+);
 
-gsap.to('.contact-links', {
-  opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.6
-});
+gsap.fromTo('.contact-form-wrap',
+  { opacity: 0, y: 24 },
+  { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.5 }
+);
 
-// ── form send (mailto fallback) ──
+gsap.fromTo('.contact-links',
+  { opacity: 0, y: 24 },
+  { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.6 }
+);
+
+// ── form send ──
 const sendBtn = document.getElementById('send-btn');
 const formNote = document.getElementById('form-note');
 
@@ -35,12 +41,4 @@ sendBtn.addEventListener('click', () => {
 
   formNote.textContent = 'Opening your email client...';
   formNote.style.color = 'var(--accent)';
-});
-
-// close nav when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('open');
-  });
 });

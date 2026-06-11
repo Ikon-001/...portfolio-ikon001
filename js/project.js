@@ -1,8 +1,8 @@
-// ── get project id from URL ──
+gsap.registerPlugin(ScrollTrigger);
+
+// ── get project id ──
 const params = new URLSearchParams(window.location.search);
 const projectId = params.get('id');
-
-// ── find project in data ──
 const project = projects.find(p => p.id === projectId);
 
 if (!project) {
@@ -14,7 +14,6 @@ if (!project) {
   `;
 } else {
 
-  // ── page title ──
   document.title = `${project.title} — Ikon.dev`;
 
   // ── meta ──
@@ -30,12 +29,11 @@ if (!project) {
   // ── overview ──
   document.getElementById('overview-text').textContent = project.overview || project.description;
 
-  // ── phases (multi-phase builds) ──
+  // ── phases or how it works ──
   if (project.phases && project.phases.length) {
     const phasesSection = document.getElementById('project-phases');
     phasesSection.style.display = 'block';
-    const container = document.getElementById('phases-container');
-    container.innerHTML = project.phases.map(phase => `
+    document.getElementById('phases-container').innerHTML = project.phases.map(phase => `
       <div class="phase-block">
         <div class="phase-label">${phase.label}</div>
         <div class="how-steps">
@@ -49,7 +47,6 @@ if (!project) {
       </div>
     `).join('');
   } else if (project.how_it_works && project.how_it_works.length) {
-    // ── single phase how it works ──
     const howSection = document.getElementById('project-how');
     howSection.style.display = 'block';
     document.getElementById('how-steps').innerHTML = project.how_it_works.map((step, i) => `
@@ -73,8 +70,7 @@ if (!project) {
   if (project.use_cases && project.use_cases.length) {
     const usecasesSection = document.getElementById('project-usecases');
     usecasesSection.style.display = 'block';
-    const grid = document.getElementById('usecases-grid');
-    grid.innerHTML = project.use_cases.map(uc => `
+    document.getElementById('usecases-grid').innerHTML = project.use_cases.map(uc => `
       <div class="usecase-card">
         <div class="usecase-title">${uc.title}</div>
         <div class="usecase-desc">${uc.desc}</div>
@@ -94,16 +90,24 @@ if (!project) {
   nextLink.href = `./project.html?id=${next.id}`;
 
   // ── animations ──
-  gsap.to('.project-meta', {
-    opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay: 0.3
-  });
+  gsap.fromTo('.project-meta',
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay: 0.3 }
+  );
 
-  gsap.to('.project-section', {
-    opacity: 1,
-    y: 0,
-    duration: 0.5,
-    ease: 'power2.out',
-    stagger: 0.12,
-    delay: 0.5
+  gsap.utils.toArray('.project-section').forEach((section, i) => {
+    gsap.fromTo(section,
+      { opacity: 0, y: 24 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 85%'
+        }
+      }
+    );
   });
 }

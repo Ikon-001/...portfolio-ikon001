@@ -1,14 +1,22 @@
-// ── page header animation ──
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to('.page-title', {
-  opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay: 0.2
-});
-gsap.to('.page-sub', {
-  opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.4
-});
+// ── page header ──
+gsap.fromTo('.page-title',
+  { opacity: 0, y: 30 },
+  { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay: 0.2 }
+);
 
-// ── render all projects ──
+gsap.fromTo('.page-sub',
+  { opacity: 0, y: 20 },
+  { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.4 }
+);
+
+gsap.fromTo('.filters',
+  { opacity: 0, y: 16 },
+  { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 0.5 }
+);
+
+// ── render projects ──
 function renderProjects(filter = 'all') {
   const grid = document.getElementById('work-grid');
   const empty = document.getElementById('empty-state');
@@ -64,7 +72,7 @@ filterBtns.forEach(btn => {
   });
 });
 
-// ── check URL for area param (from homepage tiles) ──
+// ── URL param ──
 const params = new URLSearchParams(window.location.search);
 const areaParam = params.get('area');
 
@@ -80,11 +88,3 @@ if (areaParam) {
 } else {
   renderProjects('all');
 }
-
-// close nav when a link is clicked
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('open');
-  });
-});
