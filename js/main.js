@@ -62,7 +62,7 @@ function renderFeatured() {
   const grid = document.getElementById('featured-grid');
   if (!grid || typeof projects === 'undefined') return;
 
-  const featured = projects.slice(0, 3);
+  const featured = projects.filter(p => p.id !== 'A02').slice(0, 3);
 
   featured.forEach(p => {
     const card = document.createElement('div');

@@ -1,6 +1,6 @@
 const projects = [
   {
-    id: "001",
+    id: "A01",
     title: "Automated Form Intake",
     area: "automation",
     tags: ["Make", "Tally", "Google Sheets", "Gmail"],
@@ -19,7 +19,7 @@ const projects = [
     link: null
   },
   {
-    id: "002",
+    id: "A02",
     title: "Smart Lead Follow-Up",
     area: "automation",
     tags: ["Make", "Tally", "Google Sheets", "Gmail"],
@@ -38,7 +38,7 @@ const projects = [
     link: null
   },
   {
-    id: "003",
+    id: "A03",
     title: "Client Onboarding System",
     area: "automation",
     tags: ["Make", "Tally", "Google Sheets", "Gmail"],
