@@ -1,16 +1,5 @@
 /* ── variables & tokens ── */
 :root {
-  --accent: #e8b453;
-  --accent-dim: #c9922a;
-  --accent-light: #2a2208;
-  --text-primary: #f0ede8;
-  --text-secondary: #888780;
-  --text-muted: #444440;
-  --bg: #0a0a0a;
-  --bg-secondary: #111110;
-  --bg-tertiary: #181816;
-  --border: rgba(255,255,255,0.06);
-  --border-hover: rgba(232,180,83,0.2);
   --radius: 8px;
   --radius-lg: 14px;
 
@@ -37,6 +26,115 @@
   --text-3xl: 72px;
 }
 
+/* ── theme: default (dark gold) ── */
+[data-theme="default"],
+:root {
+  --accent: #e8b453;
+  --accent-dim: #c9922a;
+  --accent-light: #2a2208;
+  --text-primary: #f0ede8;
+  --text-secondary: #888780;
+  --text-muted: #444440;
+  --bg: #0a0a0a;
+  --bg-secondary: #111110;
+  --bg-tertiary: #181816;
+  --border: rgba(255,255,255,0.06);
+  --border-hover: rgba(232,180,83,0.2);
+  --font-display: 'Cabinet Grotesk', sans-serif;
+  --font-body: 'General Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── theme: automation (n8n) ── */
+[data-theme="automation"] {
+  --accent: #ff6d35;
+  --accent-dim: #e05520;
+  --accent-light: #2a1208;
+  --text-primary: #f0ede8;
+  --text-secondary: #888780;
+  --text-muted: #444440;
+  --bg: #0a0a0a;
+  --bg-secondary: #111110;
+  --bg-tertiary: #181816;
+  --border: rgba(255,109,53,0.12);
+  --border-hover: rgba(255,109,53,0.3);
+  --font-display: 'Cabinet Grotesk', sans-serif;
+  --font-body: 'General Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── theme: dev (VS Code) ── */
+[data-theme="dev"] {
+  --accent: #4ec9b0;
+  --accent-dim: #3aa090;
+  --accent-light: #0a2520;
+  --text-primary: #d4d4d4;
+  --text-secondary: #858585;
+  --text-muted: #3c3c3c;
+  --bg: #1e1e1e;
+  --bg-secondary: #252526;
+  --bg-tertiary: #2d2d2d;
+  --border: rgba(255,255,255,0.06);
+  --border-hover: rgba(78,201,176,0.25);
+  --font-display: 'JetBrains Mono', monospace;
+  --font-body: 'JetBrains Mono', monospace;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── theme: design (editorial pastel) ── */
+[data-theme="design"] {
+  --accent: #c084a0;
+  --accent-dim: #a06880;
+  --accent-light: #f5e8ef;
+  --text-primary: #2a1f28;
+  --text-secondary: #7a6070;
+  --text-muted: #b8a0b0;
+  --bg: #faf5f0;
+  --bg-secondary: #f0e8e0;
+  --bg-tertiary: #e8ddd4;
+  --border: rgba(42,31,40,0.08);
+  --border-hover: rgba(192,132,160,0.3);
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── theme: visuals (cinematic) ── */
+[data-theme="visuals"] {
+  --accent: #c8a882;
+  --accent-dim: #a88860;
+  --accent-light: #1a1208;
+  --text-primary: #e8e0d8;
+  --text-secondary: #7a7068;
+  --text-muted: #3a3028;
+  --bg: #0d0b09;
+  --bg-secondary: #161210;
+  --bg-tertiary: #201a14;
+  --border: rgba(200,168,130,0.08);
+  --border-hover: rgba(200,168,130,0.25);
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'General Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── theme: ai-systems ── */
+[data-theme="ai-systems"] {
+  --accent: #e8b453;
+  --accent-dim: #c9922a;
+  --accent-light: #2a2208;
+  --text-primary: #f0ede8;
+  --text-secondary: #888780;
+  --text-muted: #444440;
+  --bg: #0f0f0f;
+  --bg-secondary: #161616;
+  --bg-tertiary: #1e1e1e;
+  --border: rgba(232,180,83,0.08);
+  --border-hover: rgba(232,180,83,0.2);
+  --font-display: 'General Sans', sans-serif;
+  --font-body: 'General Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
 /* ── reset ── */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -50,12 +148,13 @@ html {
 }
 
 body {
-  font-family: 'General Sans', sans-serif;
+  font-family: var(--font-body);
   background: var(--bg);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
   font-size: var(--text-base);
+  transition: background 0.6s ease, color 0.4s ease;
 }
 
 a {
@@ -77,7 +176,7 @@ h1, h2, h3,
 .cta-title,
 .next-link,
 .project-title {
-  font-family: 'Cabinet Grotesk', sans-serif;
+  font-family: var(--font-display);
   line-height: 1.05;
   letter-spacing: -0.02em;
 }
@@ -353,6 +452,41 @@ section {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+}
+
+/* ── theme overlay ── */
+#theme-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  clip-path: circle(0px at 50vw 50vh);
+  will-change: clip-path;
+  transition: background 0s;
+}
+
+/* ── bg canvas ── */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  width: 100vw !important;
+  height: 100vh !important;
+}
+
+/* ── canvas wrap — layout only ── */
+.canvas-wrap {
+  position: relative;
+  z-index: 3;
+}
+
+/* ── content above canvas ── */
+.featured,
+.about-strip,
+.footer {
+  position: relative;
+  z-index: 3;
 }
 
 .areas-grid {
@@ -665,4 +799,171 @@ section {
   font-size: var(--text-xs);
   color: var(--text-muted);
   letter-spacing: 0.06em;
+}
+
+/* ── theme-specific overrides ── */
+
+/* dev theme — line numbers on sections */
+[data-theme="dev"] .section-label::before {
+  content: '// ';
+  opacity: 0.4;
+}
+
+[data-theme="dev"] .card-id::before {
+  content: '/* ';
+}
+
+[data-theme="dev"] .card-id::after {
+  content: ' */';
+}
+
+[data-theme="dev"] .nav-logo::before {
+  content: '> ';
+  color: var(--accent);
+}
+
+[data-theme="dev"] .hero-name {
+  font-size: clamp(28px, 4vw, 52px);
+}
+
+/* design theme — editorial feel */
+[data-theme="design"] .navbar {
+  background: rgba(250,245,240,0.92);
+}
+
+[data-theme="design"] .hero-name {
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+
+[data-theme="design"] .btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 2px;
+}
+
+[data-theme="design"] .btn-secondary {
+  border-radius: 2px;
+}
+
+[data-theme="design"] .project-card,
+[data-theme="design"] .area-tile {
+  border-radius: 2px;
+  box-shadow: 0 2px 20px rgba(42,31,40,0.06);
+}
+
+[data-theme="design"] .footer {
+  border-top-color: rgba(42,31,40,0.08);
+}
+
+/* visuals theme — cinematic bars */
+[data-theme="visuals"] .canvas-wrap::before,
+[data-theme="visuals"] .canvas-wrap::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: #0d0b09;
+  z-index: 2;
+  pointer-events: none;
+}
+
+[data-theme="visuals"] .canvas-wrap::before { top: 0; }
+[data-theme="visuals"] .canvas-wrap::after { bottom: 0; }
+
+[data-theme="visuals"] .hero-name {
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+/* ai-systems theme — chat feel */
+[data-theme="ai-systems"] .hero-tag::before {
+  content: '◆ ';
+  font-size: 8px;
+  vertical-align: middle;
+}
+
+[data-theme="ai-systems"] .project-card {
+  border-radius: 4px;
+}
+
+/* navbar transition */
+.navbar {
+  transition: background 0.6s ease, border-color 0.3s, padding 0.3s;
+}
+
+/* all color transitions */
+.area-tile,
+.project-card,
+.btn,
+.footer,
+.section-label,
+.card-id,
+.area-id {
+  transition: background 0.6s ease, color 0.4s ease,
+              border-color 0.4s ease, box-shadow 0.4s ease,
+              transform 0.25s ease;
+}
+
+/* ── card hover states ── */
+.area-tile {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.4s ease,
+              box-shadow 0.4s ease,
+              border-color 0.4s ease,
+              background 0.6s ease;
+}
+
+.areas-grid:has(.area-tile:hover) .area-tile:not(:hover) {
+  transform: scale(0.92);
+  opacity: 0.3;
+}
+
+.area-tile:hover {
+  transform: scale(1.07) translateY(-4px) !important;
+  opacity: 1 !important;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  z-index: 10;
+  border-color: var(--accent) !important;
+}
+
+/* ── locked card pulse ── */
+.area-tile.theme-locked {
+  border-color: var(--accent) !important;
+  animation: lockedPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes lockedPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 transparent;
+    border-color: var(--border-hover);
+  }
+  50% {
+    box-shadow: 0 0 24px -4px var(--accent);
+    border-color: var(--accent);
+  }
+}
+
+/* ── wave repaint flash ── */
+.wave-hit {
+  animation: waveHit 0.3s ease-out forwards;
+}
+
+@keyframes waveHit {
+  0% { opacity: 0.4; }
+  60% { opacity: 1.0; }
+  100% { opacity: 1; }
+}
+
+/* ── body theme transitions ── */
+body {
+  transition: background 0.8s ease, color 0.5s ease;
+}
+
+/* ── dev theme nav logo ── */
+[data-theme="dev"] .nav-logo::before {
+  content: '> ';
+  color: var(--accent);
 }

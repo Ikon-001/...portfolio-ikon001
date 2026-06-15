@@ -5,14 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ikon.dev — Gideon</title>
   <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=general-sans@400,500,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:wght@700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="data/projects.js" defer></script>
   <script src="js/global.js" defer></script>
   <script src="js/main.js" defer></script>
+  <script src="js/canvas.js" defer></script>
 </head>
-<body>
+<body data-theme="default">
+
+  <!-- theme overlay — fixed, clips from card center outward -->
+  <div id="theme-overlay"></div>
+
+  <!-- bg canvas — fixed, full screen, sits above overlay -->
+  <canvas id="bg-canvas"></canvas>
 
   <!-- navbar -->
   <nav class="navbar">
@@ -27,62 +35,67 @@
     </button>
   </nav>
 
-  <!-- hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-tag">
-        <span class="tag-text">Automation</span>
-      </div>
-      <h1 class="hero-name">
-        I'm Gideon.<br />
-        <span class="hero-headline">I build things that work.</span>
-      </h1>
-      <p class="hero-sub">
-        Automations, interfaces, and systems for small businesses —
-        clean, fast, documented.
-      </p>
-      <div class="hero-btns">
-        <a href="work.html" class="btn btn-primary">See my work</a>
-        <a href="contact.html" class="btn btn-secondary">Get in touch</a>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span>scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
+  <!-- canvas-wrap — layout only -->
+  <div class="canvas-wrap">
 
-  <!-- what I do -->
-  <section class="areas" id="areas">
-    <div class="section-header">
-      <span class="section-label">What I do</span>
-      <h2 class="section-title">Five areas, one system.</h2>
-    </div>
-    <div class="areas-grid">
-      <a href="work.html?area=automation" class="area-tile">
-        <span class="area-id">01</span>
-        <span class="area-name">Automation</span>
-      </a>
-      <a href="work.html?area=dev" class="area-tile">
-        <span class="area-id">02</span>
-        <span class="area-name">Dev</span>
-      </a>
-      <a href="work.html?area=design" class="area-tile area-parked">
-  <span class="area-id">03</span>
-  <span class="area-name">Design</span>
-  <span class="area-coming">coming soon</span>
-</a>
-<a href="work.html?area=visuals" class="area-tile area-parked">
-  <span class="area-id">04</span>
-  <span class="area-name">Visuals</span>
-  <span class="area-coming">coming soon</span>
-</a>
-      <a href="work.html?area=ai-systems" class="area-tile">
-  <span class="area-id">05</span>
-  <span class="area-name">AI Systems</span>
-</a>
-    </div>
-  </section>
+    <!-- hero -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-tag">
+          <span class="tag-text">Automation</span>
+        </div>
+        <h1 class="hero-name">
+          I'm Gideon.<br />
+          <span class="hero-headline">I build things that work.</span>
+        </h1>
+        <p class="hero-sub">
+          Automations, interfaces, and systems for small businesses —
+          clean, fast, documented.
+        </p>
+        <div class="hero-btns">
+          <a href="work.html" class="btn btn-primary">See my work</a>
+          <a href="contact.html" class="btn btn-secondary">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- what I do -->
+    <section class="areas" id="areas">
+      <div class="section-header">
+        <span class="section-label">What I do</span>
+        <h2 class="section-title">Five areas, one system.</h2>
+      </div>
+      <div class="areas-grid">
+        <a href="work.html?area=automation" class="area-tile" data-area="automation">
+          <span class="area-id">01</span>
+          <span class="area-name">Automation</span>
+        </a>
+        <a href="work.html?area=dev" class="area-tile" data-area="dev">
+          <span class="area-id">02</span>
+          <span class="area-name">Dev</span>
+        </a>
+        <a href="work.html?area=design" class="area-tile" data-area="design">
+          <span class="area-id">03</span>
+          <span class="area-name">Design</span>
+          <span class="area-coming">coming soon</span>
+        </a>
+        <a href="work.html?area=visuals" class="area-tile" data-area="visuals">
+          <span class="area-id">04</span>
+          <span class="area-name">Visuals</span>
+          <span class="area-coming">coming soon</span>
+        </a>
+        <a href="work.html?area=ai-systems" class="area-tile" data-area="ai-systems">
+          <span class="area-id">05</span>
+          <span class="area-name">AI Systems</span>
+        </a>
+      </div>
+    </section>
+
+  </div>
 
   <!-- featured builds -->
   <section class="featured" id="work">

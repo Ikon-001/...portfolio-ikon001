@@ -1,5 +1,10 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// ── set theme from URL ──
+const urlParams = new URLSearchParams(window.location.search);
+const urlArea = urlParams.get('area');
+if (urlArea) document.body.setAttribute('data-theme', urlArea);
+
 // ── page header ──
 gsap.fromTo('.page-title',
   { opacity: 0, y: 30 },
