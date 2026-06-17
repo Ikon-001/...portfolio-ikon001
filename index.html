@@ -16,10 +16,10 @@
 </head>
 <body data-theme="default">
 
-  <!-- theme overlay — fixed, clips from card center outward -->
+  <!-- theme overlay -->
   <div id="theme-overlay"></div>
 
-  <!-- bg canvas — fixed, full screen, sits above overlay -->
+  <!-- bg canvas -->
   <canvas id="bg-canvas"></canvas>
 
   <!-- navbar -->
@@ -38,36 +38,87 @@
   <!-- canvas-wrap — layout only -->
   <div class="canvas-wrap">
 
-    <!-- hero -->
+    <!-- ── HERO ── -->
     <section class="hero">
       <div class="hero-inner">
-        <div class="hero-tag">
-          <span class="tag-text">Automation</span>
+
+        <!-- left: text -->
+        <div class="hero-text">
+          <div class="hero-tag">
+            <span class="tag-text">Automation</span>
+          </div>
+          <h1 class="hero-name">
+            I'm Gideon.<br />
+            <span class="hero-headline">I build things<br>that work.</span>
+          </h1>
+          <p class="hero-sub">
+            Automations, AI systems, and interfaces for small businesses —
+            clean, fast, documented.
+          </p>
+          <div class="hero-btns">
+            <a href="work.html" class="btn btn-primary">See my work</a>
+            <a href="contact.html" class="btn btn-secondary">Get in touch</a>
+          </div>
         </div>
-        <h1 class="hero-name">
-          I'm Gideon.<br />
-          <span class="hero-headline">I build things that work.</span>
-        </h1>
-        <p class="hero-sub">
-          Automations, interfaces, and systems for small businesses —
-          clean, fast, documented.
-        </p>
-        <div class="hero-btns">
-          <a href="work.html" class="btn btn-primary">See my work</a>
-          <a href="contact.html" class="btn btn-secondary">Get in touch</a>
+
+        <!-- right: photo -->
+        <div class="hero-photo-wrap">
+          <div class="hero-photo">
+            <div class="hero-photo-placeholder">
+              <span>GI</span>
+            </div>
+            <!-- swap placeholder for: <img src="assets/gideon.jpg" alt="Gideon" /> -->
+          </div>
+          <div class="hero-photo-badge">
+            <span class="badge-dot"></span>
+            Available for work
+          </div>
+        </div>
+
+      </div>
+
+      <!-- rolling tools marquee -->
+      <div class="hero-marquee-wrap">
+        <div class="hero-marquee">
+          <div class="marquee-track">
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" /><span>n8n</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/make/6D00CC" alt="Make" /><span>Make</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" /><span>Python</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/flask/ffffff" alt="Flask" /><span>Flask</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" /><span>Supabase</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" /><span>Figma</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="Claude" /><span>Claude API</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code" /><span>VS Code</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/google/4285F4" alt="Google Sheets" /><span>Google Sheets</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" /><span>GitHub</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/netlify/00C7B7" alt="Netlify" /><span>Netlify</span></span>
+            <!-- duplicate for seamless loop -->
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" /><span>n8n</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/make/6D00CC" alt="Make" /><span>Make</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" /><span>Python</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/flask/ffffff" alt="Flask" /><span>Flask</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" /><span>Supabase</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" /><span>Figma</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="Claude" /><span>Claude API</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code" /><span>VS Code</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/google/4285F4" alt="Google Sheets" /><span>Google Sheets</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" /><span>GitHub</span></span>
+            <span class="marquee-item"><img src="https://cdn.simpleicons.org/netlify/00C7B7" alt="Netlify" /><span>Netlify</span></span>
+          </div>
         </div>
       </div>
+
       <div class="hero-scroll">
         <span>scroll</span>
         <div class="scroll-line"></div>
       </div>
     </section>
 
-    <!-- what I do -->
+    <!-- ── AREAS — four worlds ── -->
     <section class="areas" id="areas">
       <div class="section-header">
         <span class="section-label">What I do</span>
-        <h2 class="section-title">Five areas, one system.</h2>
+        <h2 class="section-title">Four areas, one system.</h2>
       </div>
       <div class="areas-grid">
         <a href="work.html?area=automation" class="area-tile" data-area="automation">
@@ -83,13 +134,8 @@
           <span class="area-name">Design</span>
           <span class="area-coming">coming soon</span>
         </a>
-        <a href="work.html?area=visuals" class="area-tile" data-area="visuals">
-          <span class="area-id">04</span>
-          <span class="area-name">Visuals</span>
-          <span class="area-coming">coming soon</span>
-        </a>
         <a href="work.html?area=ai-systems" class="area-tile" data-area="ai-systems">
-          <span class="area-id">05</span>
+          <span class="area-id">04</span>
           <span class="area-name">AI Systems</span>
         </a>
       </div>
@@ -97,41 +143,147 @@
 
   </div>
 
-  <!-- featured builds -->
+  <!-- ── FEATURED BUILDS ── -->
   <section class="featured" id="work">
     <div class="section-header">
       <span class="section-label">Featured builds</span>
       <h2 class="section-title">Recent work.</h2>
     </div>
     <div class="projects-grid" id="featured-grid">
-      <!-- populated by main.js from projects.js -->
+      <!-- populated by main.js -->
     </div>
     <a href="work.html" class="view-all">View all builds →</a>
   </section>
 
-  <!-- about strip -->
-  <section class="about-strip">
-    <div class="about-inner">
-      <div class="about-avatar">GI</div>
-      <div class="about-text">
-        <p class="about-name">Gideon · ikon.dev</p>
-        <p class="about-bio">
-          CS student at Gregory University. Building automations and
-          interfaces for small businesses. Behind the work, not in
-          front of the camera.
-        </p>
-        <a href="about.html" class="about-link">More about me →</a>
+  <!-- ── STACK ── -->
+  <section class="stack-section">
+    <div class="section-header">
+      <span class="section-label">Tools I build with</span>
+      <h2 class="section-title">The stack.</h2>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/n8n/EA4B71" alt="n8n" />
+        <span>n8n</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/make/6D00CC" alt="Make" />
+        <span>Make</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" />
+        <span>Python</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/flask/ffffff" alt="Flask" />
+        <span>Flask</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase" />
+        <span>Supabase</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="Claude API" />
+        <span>Claude API</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" />
+        <span>Figma</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/visualstudiocode/007ACC" alt="VS Code" />
+        <span>VS Code</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/google/4285F4" alt="Google Sheets" />
+        <span>Google Sheets</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" />
+        <span>GitHub</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/netlify/00C7B7" alt="Netlify" />
+        <span>Netlify</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" />
+        <span>HTML5</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" />
+        <span>CSS3</span>
+      </div>
+      <div class="stack-item">
+        <img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="JavaScript" />
+        <span>JavaScript</span>
       </div>
     </div>
   </section>
 
-  <!-- footer -->
+  <!-- ── TIMELINE ── -->
+  <section class="timeline-section">
+    <div class="section-header">
+      <span class="section-label">Journey</span>
+      <h2 class="section-title">How I got here.</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">2021</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Gregory University, Uturu</div>
+          <div class="timeline-desc">Started BSc Computer Science. Discovered that building things was more interesting than studying them.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2023</div>
+        <div class="timeline-content">
+          <div class="timeline-title">First Automation Build</div>
+          <div class="timeline-desc">Built A01 — a client capture and follow-up pipeline for small businesses using Make, Tally, and Gmail. First time a system ran without me.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2024</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Expanded into AI Systems</div>
+          <div class="timeline-desc">Started integrating Claude API into workflows. Began final year project — GUU AI Digital Brain — a full AI communication system for campus use.</div>
+        </div>
+      </div>
+      <div class="timeline-item timeline-item--active">
+        <div class="timeline-date">Now</div>
+        <div class="timeline-content">
+          <div class="timeline-title">Final Year + ikon.dev</div>
+          <div class="timeline-desc">Finishing the GUU AI Brain (Rasa + Supabase + Termii + Claude API + Flask). Building in public at ikon.dev.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT CTA ── -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <span class="section-label">Let's work together</span>
+      <h2 class="cta-title">Got something<br>that needs building?</h2>
+      <p class="cta-sub">Available for automation builds, AI system integrations, and dev projects. Small businesses welcome.</p>
+      <a href="contact.html" class="btn btn-primary">Start a conversation →</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
   <footer class="footer">
-    <span class="footer-copy">ikon.dev · 2025</span>
-    <div class="footer-links">
+    <a href="index.html" class="footer-logo">ikon.dev</a>
+    <div class="footer-nav">
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-socials">
       <a href="https://x.com/Ikon_dev" target="_blank">X</a>
       <a href="#" target="_blank">GitHub</a>
-      <a href="#" target="_blank">WhatsApp</a>
+      <a href="https://wa.me/2348163681357" target="_blank">WhatsApp</a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Ike-Onuigbo Gideon · ikon.dev</span>
     </div>
   </footer>
 

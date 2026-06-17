@@ -1,16 +1,14 @@
 // ── register ScrollTrigger ──
 gsap.registerPlugin(ScrollTrigger);
-
-// ── hero tag cycling ──
-const areas = ['Automation', 'Dev', 'Design', 'Visuals', 'AI Systems'];
+ 
+// ── hero tag cycling — four areas only ──
+const areas = ['Automation', 'Dev', 'Design', 'AI Systems'];
 const tagText = document.querySelector('.tag-text');
 let current = 0;
-
+ 
 function cycleTag() {
   gsap.to(tagText, {
-    opacity: 0,
-    y: -8,
-    duration: 0.3,
+    opacity: 0, y: -8, duration: 0.3,
     onComplete: () => {
       current = (current + 1) % areas.length;
       tagText.textContent = areas[current];
@@ -21,23 +19,23 @@ function cycleTag() {
     }
   });
 }
-
+ 
 setInterval(cycleTag, 2000);
-
+ 
 // ── hero entrance ──
 const heroTl = gsap.timeline({ delay: 0.2 });
-
+ 
 heroTl
-  .to('.hero-tag', { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
-  .to('.hero-name', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.3')
-  .to('.hero-sub',  { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3')
-  .to('.hero-btns', { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3')
-  .to('.hero-scroll',{ opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.2');
-
+  .to('.hero-tag',        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
+  .to('.hero-name',       { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.3')
+  .to('.hero-sub',        { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3')
+  .to('.hero-btns',       { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.3')
+  .to('.hero-photo-wrap', { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.5')
+  .to('.hero-scroll',     { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, '-=0.2');
+ 
 // ── hero parallax ──
-gsap.to('.hero-inner', {
-  y: 60,
-  ease: 'none',
+gsap.to('.hero-text', {
+  y: 60, ease: 'none',
   scrollTrigger: {
     trigger: '.hero',
     start: 'top top',
@@ -45,48 +43,35 @@ gsap.to('.hero-inner', {
     scrub: true
   }
 });
-
+ 
 // ── area tiles ──
 gsap.fromTo('.area-tile',
   { opacity: 0, y: 30, scale: 0.96 },
   {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    duration: 0.5,
-    ease: 'power2.out',
-    stagger: 0.08,
-    scrollTrigger: {
-      trigger: '.areas-grid',
-      start: 'top 82%',
-    }
+    opacity: 1, y: 0, scale: 1,
+    duration: 0.5, ease: 'power2.out', stagger: 0.08,
+    scrollTrigger: { trigger: '.areas-grid', start: 'top 82%' }
   }
 );
-
+ 
 // ── section headers ──
 gsap.utils.toArray('.section-header').forEach(header => {
   gsap.fromTo(header,
     { opacity: 0, y: 20 },
     {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: header,
-        start: 'top 85%'
-      }
+      opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+      scrollTrigger: { trigger: header, start: 'top 85%' }
     }
   );
 });
-
+ 
 // ── featured projects render ──
 function renderFeatured() {
   const grid = document.getElementById('featured-grid');
   if (!grid || typeof projects === 'undefined') return;
-
-  const featured = projects.filter(p => p.id !== 'A02').slice(0, 3);
-
+ 
+  const featured = projects.filter(p => p.id !== 'A02' && p.id !== 'A03').slice(0, 3);
+ 
   featured.forEach(p => {
     const card = document.createElement('div');
     card.className = 'project-card';
@@ -104,32 +89,40 @@ function renderFeatured() {
     grid.appendChild(card);
   });
 }
-
+ 
 renderFeatured();
-
-// ── project cards ──
+ 
+// ── project cards scroll entrance ──
 ScrollTrigger.batch('.project-card', {
   onEnter: batch => gsap.to(batch, {
-    opacity: 1,
-    y: 0,
-    duration: 0.5,
-    ease: 'power2.out',
-    stagger: 0.1
+    opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1
   }),
   start: 'top 85%'
 });
-
-// ── about strip ──
-gsap.fromTo('.about-inner',
-  { opacity: 0, x: -30 },
+ 
+// ── stack items ──
+gsap.fromTo('.stack-item',
+  { opacity: 0, y: 20 },
   {
-    opacity: 1,
-    x: 0,
-    duration: 0.7,
-    ease: 'power2.out',
-    scrollTrigger: {
-      trigger: '.about-strip',
-      start: 'top 80%'
-    }
+    opacity: 1, y: 0, duration: 0.4, ease: 'power2.out', stagger: 0.04,
+    scrollTrigger: { trigger: '.stack-grid', start: 'top 85%' }
+  }
+);
+ 
+// ── timeline items ──
+gsap.fromTo('.timeline-item',
+  { opacity: 0, x: -20 },
+  {
+    opacity: 0.6, x: 0, duration: 0.5, ease: 'power2.out', stagger: 0.12,
+    scrollTrigger: { trigger: '.timeline', start: 'top 80%' }
+  }
+);
+ 
+// ── cta section ──
+gsap.fromTo('.cta-inner',
+  { opacity: 0, y: 30 },
+  {
+    opacity: 1, y: 0, duration: 0.7, ease: 'power2.out',
+    scrollTrigger: { trigger: '.cta-section', start: 'top 80%' }
   }
 );
