@@ -255,7 +255,7 @@ h1, h2, h3,
 #theme-overlay {
   position: fixed;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
   clip-path: circle(0px at 50vw 50vh);
   will-change: clip-path;
@@ -265,7 +265,7 @@ h1, h2, h3,
 #bg-canvas {
   position: fixed;
   inset: 0;
-  z-index: 2;
+  z-index: 0;
   pointer-events: none;
   width: 100vw !important;
   height: 100vh !important;
@@ -274,7 +274,7 @@ h1, h2, h3,
 /* ── canvas wrap ── */
 .canvas-wrap {
   position: relative;
-  z-index: 3;
+  z-index: 1;
 }
  
 .featured,
@@ -283,7 +283,7 @@ h1, h2, h3,
 .cta-section,
 .footer {
   position: relative;
-  z-index: 3;
+  z-index: 1;
 }
  
 /* ── buttons ── */
@@ -479,7 +479,11 @@ section { padding: var(--sp-9) var(--sp-7); }
 /* ── marquee ── */
 .hero-marquee-wrap {
   width: 100vw;
-  margin-left: calc(-1 * var(--sp-7));
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   overflow: hidden;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
